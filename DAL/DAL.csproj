@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RepositoryFactory.cs" />
     <None Include="..\EntitiesStandart\Categories.cs">
       <DependentUpon>NWindDBModel.tt</DependentUpon>
     </None>
