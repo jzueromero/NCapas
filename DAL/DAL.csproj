@@ -56,6 +56,7 @@
     <None Include="..\EntitiesStandart\Products.cs">
       <DependentUpon>NWindDBModel.tt</DependentUpon>
     </None>
+    <Compile Include="EFRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="NWindDBModel.Context.cs">
       <AutoGen>True</AutoGen>
