@@ -14,5 +14,19 @@ namespace DAL
         {
             this.Context = context;
         }
+
+        public TEntity Create<TEntity>(TEntity toCreate) where TEntity : class
+        {
+            TEntity Result = default(TEntity);
+            try
+            {
+                Context.Set<TEntity>().Add(toCreate);
+                Context.SaveChanges();
+                Result = toCreate;
+            }
+            catch { }
+            return Result;
+        }
+
     }
 }
