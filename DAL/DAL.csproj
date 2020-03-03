@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\EntitiesStandart\Categories.cs">
+      <DependentUpon>NWindDBModel.tt</DependentUpon>
+    </None>
+    <None Include="..\EntitiesStandart\Products.cs">
+      <DependentUpon>NWindDBModel.tt</DependentUpon>
+    </None>
     <Compile Include="NWindDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
