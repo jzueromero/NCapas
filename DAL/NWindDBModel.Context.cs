@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL
+namespace EntitiesStandart
 {
     using System;
     using System.Data.Entity;
