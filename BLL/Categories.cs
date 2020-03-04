@@ -10,7 +10,7 @@ namespace BLL
 {
     public class Categories
     {
-        public Categories Create(Categories newCategories)
+        public EntitiesStandart.Categories Create(EntitiesStandart.Categories newCategories)
         {
             using (var r = RepositoryFactory.CreateRepository())
             {

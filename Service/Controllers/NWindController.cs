@@ -12,34 +12,48 @@ namespace Service.Controllers
 {
     public class NWindController : ApiController, IService
     {
+        [HttpPost]
         public EntitiesStandart.Categories CreateCategory(EntitiesStandart.Categories newCategory)
         {
-            throw new NotImplementedException();
+            var BL = new BLL.Categories();
+            var NewCategory = BL.Create(newCategory);
+            return NewCategory;
         }
 
+        [HttpPost]
         public Products CreateProduct(Products newProduct)
         {
-            throw new NotImplementedException();
+            var BL = new BLL.Product();
+            var NewProduct = BL.Create(newProduct);
+            return NewProduct;
         }
-
+        [HttpGet]
         public bool DeleteProduct(int ID)
         {
-            throw new NotImplementedException();
+            var BL = new Product();
+            var resul = BL.Delete(ID);
+            return resul;
         }
-
+        [HttpGet]
         public List<Products> FilterProductByCategoryID(int ID)
         {
-            throw new NotImplementedException();
+            var BL = new BLL.Product();
+            var result = BL.FilterByCategoryID(ID);
+            return result;
         }
-
+        [HttpGet]
         public Products RetrieveProductById(int ID)
         {
-            throw new NotImplementedException();
+            var BL = new BLL.Product();
+            var Result = BL.RetrieveById(ID);
+            return Result;
         }
-
+        [HttpPost]
         public bool UpdateProduct(Products ProductToUpdate)
         {
-            throw new NotImplementedException();
+            var BL = new BLL.Product();
+            var Result = BL.Update(ProductToUpdate);
+            return Result;
         }
     }
 }
