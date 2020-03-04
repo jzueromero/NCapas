@@ -28,9 +28,9 @@ namespace TestConsola.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SCDT-JOSUER\\SQL_DESARROLLO;Initial Catalog=NWind;Persist Security Inf" +
             "o=True;User ID=sa;Password=Altahir")]
-        public string connectionStr {
+        public string NWindEntities {
             get {
-                return ((string)(this["connectionStr"]));
+                return ((string)(this["NWindEntities"]));
             }
         }
     }

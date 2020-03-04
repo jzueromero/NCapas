@@ -25,7 +25,7 @@ namespace DAL
                 Context.SaveChanges();
                 Result = toCreate;
             }
-            catch { }
+            catch (Exception a) { var b = a.Message; }
             return Result;
         }
 
