@@ -10,7 +10,9 @@ namespace DAL
     {
         public static IRepository CreateRepository()
         {
-            return new EFRepository(new EntitiesStandart.NWindEntities());
+            var Context = new EntitiesStandart.NWindEntities();
+            Context.Configuration.ProxyCreationEnabled = false;
+            return new EFRepository(Context);
         }
 
     }
