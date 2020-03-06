@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EntitiesStandart\EntitiesStandart.csproj" />
+    <ProjectReference Include="..\SLC\SLC.csproj" />
+  </ItemGroup>
+
 </Project>
