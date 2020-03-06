@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLC", "SLC\SLC.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{6E0679DB-D792-4811-9BE4-8CDC1FBD65C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWindProxyService", "NWindProxyService\NWindProxyService.csproj", "{ED2A16DB-E50A-46FC-B006-08694C662F09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6E0679DB-D792-4811-9BE4-8CDC1FBD65C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0679DB-D792-4811-9BE4-8CDC1FBD65C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E0679DB-D792-4811-9BE4-8CDC1FBD65C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2A16DB-E50A-46FC-B006-08694C662F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2A16DB-E50A-46FC-B006-08694C662F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2A16DB-E50A-46FC-B006-08694C662F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2A16DB-E50A-46FC-B006-08694C662F09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
