@@ -127,6 +127,19 @@ namespace NWindProxyService
                                 DeleteProductAsync(ID)).Wait();
             return Result;
         }
+
+        public async Task<List<Products>> FilterProductsByCategoryIDAsync(int ID)
+        {
+            return await SendGet<List<Products>>($"/api/nwind/FilterProductsByCategoryID/{ID}");
+        }
+
+        public List<Products> FilterProductsByCategoryID(int ID)
+        {
+            List<Products> Result = null;
+            Task.Run(async () => Result = await 
+                            FilterProductsByCategoryIDAsync(ID)).Wait();
+            return Result;
+        }
             
     }
 }
