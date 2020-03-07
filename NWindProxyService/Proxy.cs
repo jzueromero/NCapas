@@ -3,12 +3,49 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using EntitiesStandart;
+using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
+/// <summary>
+/// bibliotecas  necesarias para el get
+/// </summary>
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace NWindProxyService
 {
     public class Proxy : IService
     {
-        string BaseAddress = "http://localhost:59167/";
+        string BaseAddress = "http://localhost:59167";
 
+        public async Task<T> SendPost<T, PostData>
+            (string requestURI, PostData data)
+        {
+            T Result = default(T);
+            using (var Client = new HttpClient())
+            {
+                try
+                {
+                    //URL ABSOLUTO
+                    requestURI = BaseAddress + requestURI;
+                    Client.DefaultRequestHeaders.Accept.Clear();
+                    Client.DefaultRequestHeaders.Accept.Add
+                        ( new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json") );
+                    var JSONdata = JsonConvert.SerializeObject(data);
+                    HttpResponseMessage Response = await Client.PostAsync(requestURI, new StringContent(JSONdata.tostin
+                        (), Encoding.UTF8, "application/json"));
+
+                    var ResultWebAPI = await Response.Content.ReadAsStringAsync();
+                    Result = JsonConvert.DeserializeObject<T>(ResultWebAPI);
+
+                }
+                catch
+                { }
+                return Result;
+            }
+        }
     }
 }
