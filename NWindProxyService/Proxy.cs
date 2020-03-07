@@ -77,5 +77,16 @@ namespace NWindProxyService
                 ("/api/nwind/createproduct", newProduct);
             }
 
+        public Products CreateProduct(Products newProduct)
+        {
+            Products Result = null;
+            //Ejecutar la tarea en un nuevo hilo
+            //para que no se bloquee el hilo sincrono
+            //con wait esperamos la operacion asincrona
+            Task.Run(async () => Result = 
+                     await CreateProductAsync(newProduct)).Wait();
+            return Result;
+        }
+
     }
 }
