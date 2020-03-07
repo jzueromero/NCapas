@@ -11,7 +11,11 @@
     <title>Index</title>
 </head>
 <body>
-    <div> 
-    </div>
+   @using (Html.BeginForm())
+   { 
+    <div>Id Categoria:</div>
+    <div><input type="text" name="id" /></div>
+    <div><input type="submit" value="Buscar" /></div>
+   }
 </body>
 </html>
