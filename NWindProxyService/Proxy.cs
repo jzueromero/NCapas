@@ -100,5 +100,19 @@ namespace NWindProxyService
                      Result = await RetrieveProductByIDAsync(ID)).Wait();
             return Result;
         }
+
+        public async Task<bool> UpdateProductAsync(Products productToUpdate)
+        {
+            return await SendPost<bool, Products>
+                ("/api/nwind/UpdateProduct", productToUpdate);
+        }
+
+        public bool UpdateProduct(Products productToUPdate)
+        {
+            bool Result = false;
+            Task.Run(async () => Result = await 
+                    UpdateProductAsync(productToUPdate)).Wait();
+            return Result;
+        }
     }
 }
