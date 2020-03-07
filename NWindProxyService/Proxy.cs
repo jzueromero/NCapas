@@ -50,6 +50,25 @@ namespace NWindProxyService
 
 
         public async Task<T> SendGet<T>(string requestURI)
-        { }
+        {
+            T Result = default(T);
+            using (var Client = new HttpClient())
+            {
+                try
+                {
+                    requestURI = BaseAddress + requestURI; //URL absoluto
+
+                    Client.DefaultRequestHeaders.Accept.Clear();
+                    Client.DefaultRequestHeaders.Accept.Add(
+                       new MediaTypeWithQualityHeaderValue("applicaction/json"));
+
+                    var resultJSON = await Client.GetStringAsync(requestURI);
+                    Result = JsonConvert.DeserializeObject<T>(resultJSON);
+                }
+                catch
+                { }
+            }
+            return Result;
+        }
     }
 }
