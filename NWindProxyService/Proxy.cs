@@ -70,5 +70,12 @@ namespace NWindProxyService
             }
             return Result;
         }
+
+        public async Task<Products> CreateProductAsync (Products newProduct)
+            {
+            return await SendPost<Products, Products>
+                ("/api/nwind/createproduct", newProduct);
+            }
+
     }
 }
