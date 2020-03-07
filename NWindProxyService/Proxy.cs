@@ -128,7 +128,7 @@ namespace NWindProxyService
 
         public async Task<List<Products>> FilterProductsByCategoryIDAsync(int ID)
         {
-            return await SendGet<List<Products>>($"/api/nwind/FilterProductsByCategoryID/{ID}");
+            return await SendGet<List<Products>>($"/api/nwind/FilterProductByCategoryID/{ID}");
         }
 
         public List<Products> FilterProductByCategoryID(int ID)
