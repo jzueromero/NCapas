@@ -88,5 +88,17 @@ namespace NWindProxyService
             return Result;
         }
 
+        public async Task<Products> RetrieveProductByIDAsync(int ID)
+        {
+            return await SendGet<Products>($"/api/nwind/RetrievProductByID/{ID}");          
+        }
+
+        public Products RetrieveProductByID(int ID)
+        {
+            Products Result = null;
+            Task.Run(async () => 
+                     Result = await RetrieveProductByIDAsync(ID)).Wait();
+            return Result;
+        }
     }
 }
