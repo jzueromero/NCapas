@@ -11,7 +11,22 @@
     <title>ProductList</title>
 </head>
 <body>
-    <div> 
-    </div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio Unitario</th>
+            <th>Unidades en existencias</th>
+        </tr>
+        @foreach (var Product in Model)
+        { 
+            <tr>
+                <td>@Product.ProductID</td>
+                <td>@Product.ProductName</td>
+                <td>@Product.UnitPrice</td>
+                <td>@Product.UnitsInStock</td>
+            </tr>
+        }
+    </table>
 </body>
 </html>
