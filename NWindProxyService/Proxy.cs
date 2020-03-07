@@ -33,7 +33,7 @@ namespace NWindProxyService
                     requestURI = BaseAddress + requestURI;
                     Client.DefaultRequestHeaders.Accept.Clear();
                     Client.DefaultRequestHeaders.Accept.Add
-                        ( new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json") );
+                        (new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     var JSONdata = JsonConvert.SerializeObject(data);
                     HttpResponseMessage Response = await Client.PostAsync(requestURI, new StringContent(JSONdata.tostin
                         (), Encoding.UTF8, "application/json"));
@@ -71,11 +71,11 @@ namespace NWindProxyService
             return Result;
         }
 
-        public async Task<Products> CreateProductAsync (Products newProduct)
-            {
+        public async Task<Products> CreateProductAsync(Products newProduct)
+        {
             return await SendPost<Products, Products>
                 ("/api/nwind/createproduct", newProduct);
-            }
+        }
 
         public Products CreateProduct(Products newProduct)
         {
@@ -83,20 +83,20 @@ namespace NWindProxyService
             //Ejecutar la tarea en un nuevo hilo
             //para que no se bloquee el hilo sincrono
             //con wait esperamos la operacion asincrona
-            Task.Run(async () => Result = 
+            Task.Run(async () => Result =
                      await CreateProductAsync(newProduct)).Wait();
             return Result;
         }
 
         public async Task<Products> RetrieveProductByIDAsync(int ID)
         {
-            return await SendGet<Products>($"/api/nwind/RetrievProductByID/{ID}");          
+            return await SendGet<Products>($"/api/nwind/RetrievProductByID/{ID}");
         }
 
         public Products RetrieveProductByID(int ID)
         {
             Products Result = null;
-            Task.Run(async () => 
+            Task.Run(async () =>
                      Result = await RetrieveProductByIDAsync(ID)).Wait();
             return Result;
         }
@@ -110,9 +110,23 @@ namespace NWindProxyService
         public bool UpdateProduct(Products productToUPdate)
         {
             bool Result = false;
-            Task.Run(async () => Result = await 
+            Task.Run(async () => Result = await
                     UpdateProductAsync(productToUPdate)).Wait();
             return Result;
         }
+
+        public async Task<bool> DeleteProductAsync(int ID)
+        {
+            return await SendGet<bool>($"/api/nwind/DeleteProduct/{ID}");
+        }
+
+        public bool DeleteProduct(int ID)
+        {
+            bool Result = false;
+            Task.Run(async () => Result = await
+                                DeleteProductAsync(ID)).Wait();
+            return Result;
+        }
+            
     }
 }
