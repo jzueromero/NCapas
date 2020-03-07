@@ -140,6 +140,21 @@ namespace NWindProxyService
                             FilterProductsByCategoryIDAsync(ID)).Wait();
             return Result;
         }
+
+        public async Task<Categories> CreateCategoryAsync(Categories newCategory)
+        {
+            return await SendPost<Categories, Categories>
+                    ("/api/nwind/CreateCategory", newCategory);
+        }
+
+        public Categories CreateCategory(Categories newCategory)
+        {
+            Categories Result = null;
+            Task.Run(async () => Result = await
+                            CreateCategoryAsync(newCategory)).Wait();
+            return Result;
+        }
+
             
     }
 }
