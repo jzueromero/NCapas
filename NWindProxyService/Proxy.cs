@@ -47,5 +47,9 @@ namespace NWindProxyService
                 return Result;
             }
         }
+
+
+        public async Task<T> SendGet<T>(string requestURI)
+        { }
     }
 }
