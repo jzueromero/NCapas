@@ -35,8 +35,7 @@ namespace NWindProxyService
                     Client.DefaultRequestHeaders.Accept.Add
                         (new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     var JSONdata = JsonConvert.SerializeObject(data);
-                    HttpResponseMessage Response = await Client.PostAsync(requestURI, new StringContent(JSONdata.tostin
-                        (), Encoding.UTF8, "application/json"));
+                    HttpResponseMessage Response = await Client.PostAsync(requestURI, new StringContent(JSONdata.ToString(), Encoding.UTF8, "application/json"));
 
                     var ResultWebAPI = await Response.Content.ReadAsStringAsync();
                     Result = JsonConvert.DeserializeObject<T>(ResultWebAPI);
@@ -93,7 +92,7 @@ namespace NWindProxyService
             return await SendGet<Products>($"/api/nwind/RetrievProductByID/{ID}");
         }
 
-        public Products RetrieveProductByID(int ID)
+        public Products RetrieveProductById(int ID)
         {
             Products Result = null;
             Task.Run(async () =>
@@ -133,7 +132,7 @@ namespace NWindProxyService
             return await SendGet<List<Products>>($"/api/nwind/FilterProductsByCategoryID/{ID}");
         }
 
-        public List<Products> FilterProductsByCategoryID(int ID)
+        public List<Products> FilterProductByCategoryID(int ID)
         {
             List<Products> Result = null;
             Task.Run(async () => Result = await 
