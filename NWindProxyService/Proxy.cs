@@ -47,7 +47,6 @@ namespace NWindProxyService
             }
         }
 
-
         public async Task<T> SendGet<T>(string requestURI)
         {
             T Result = default(T);
@@ -153,7 +152,6 @@ namespace NWindProxyService
                             CreateCategoryAsync(newCategory)).Wait();
             return Result;
         }
-
             
     }
 }
