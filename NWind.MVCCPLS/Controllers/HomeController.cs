@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 //referencias
-using NWindProxyService;
+//using NWindProxyService;
 using EntitiesStandart;
 
 namespace NWind.MVCCPLS.Controllers
@@ -21,26 +21,27 @@ namespace NWind.MVCCPLS.Controllers
         public ActionResult Index(int id)
         {
             //aqui para obtener productos de la categoria
-            var Proxy = new Proxy();
-            var Products = Proxy.FilterProductByCategoryID(id);
+            var Proxy = new BLL.Product();
+            var Products = Proxy.FilterByCategoryID(id);
             return View("ProductList", Products);
         }
 
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var Proxy = new Proxy();
-            var Model = Proxy.RetrieveProductById(id);
+            //var Proxy = new Proxy();
+            var Proxy = new BLL.Product();
+            var Model = Proxy.RetrieveById(id);
             return View(Model);
         }
 
         public ActionResult CUD(int id = 0)
         {
-            var Proxy = new Proxy();
+            var Proxy = new BLL.Product();
             var Model = new Products();
             if (id != 0)
             {
-                Model = Proxy.RetrieveProductById(id);
+                Model = Proxy.RetrieveById(id);
             }
             return View(Model);
         }
@@ -50,12 +51,13 @@ namespace NWind.MVCCPLS.Controllers
             string CreateBtn, string UpdateBtn, string DeleteBtn)
         {
             Products Producto;
-            var Proxy = new Proxy();
+            //var Proxy = new Proxy();
+            var Proxy = new BLL.Product();
             ActionResult Result = View();
 
             if (CreateBtn != null)
             {
-                Producto = Proxy.CreateProduct(newProduct);
+                Producto = Proxy.Create(newProduct);
                 if (Producto != null)
                 {
                     Result = RedirectToAction("CUD", new { id = Producto.ProductID });
@@ -63,7 +65,7 @@ namespace NWind.MVCCPLS.Controllers
             }
             else if (UpdateBtn != null) //modificacion de producto
             {
-                var IsUpdate = Proxy.UpdateProduct(newProduct);
+                var IsUpdate = Proxy.Update(newProduct);
                 if (IsUpdate)
                 {
                     Result = Content("El producto se ha actualizado");
@@ -71,7 +73,7 @@ namespace NWind.MVCCPLS.Controllers
             }
             else if (DeleteBtn != null) //eliminar producto
             {
-                var DeletedProduct = Proxy.DeleteProduct(newProduct.ProductID);
+                var DeletedProduct = Proxy.Delete(newProduct.ProductID);
                 if (DeletedProduct)
                 {
                     Result = Content("El producto se ha eliminado");
