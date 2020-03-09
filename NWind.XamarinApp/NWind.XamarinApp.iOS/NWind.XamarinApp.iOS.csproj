@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2DD353E1-9FA5-4FAF-B14E-418647738D9F}</ProjectGuid>
+    <ProjectGuid>{4025D048-D244-4216-B204-F77D3D07D866}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>NWind.Xamarin.iOS</RootNamespace>
+    <RootNamespace>NWind.XamarinApp.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>NWind.Xamarin.iOS</AssemblyName>
+    <AssemblyName>NWind.XamarinApp.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
   </PropertyGroup>
@@ -127,9 +127,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\NWind.Xamarin\NWind.Xamarin.csproj">
-      <Project>{7DE06936-6F41-4991-AAFC-27B34F76146D}</Project>
-      <Name>NWind.Xamarin</Name>
+    <ProjectReference Include="..\NWind.XamarinApp\NWind.XamarinApp.csproj">
+      <Project>{8232048A-C6B6-4A7A-AD0E-860D98B9F3E0}</Project>
+      <Name>NWind.XamarinApp</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

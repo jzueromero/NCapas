@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace NWind.Xamarin
+namespace NWind.XamarinApp
 {
     public partial class App : Application
     {

@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="NWind.Xamarin.UWP.App"
+    x:Class="NWind.XamarinApp.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:NWind.Xamarin.UWP"
+    xmlns:local="using:NWind.XamarinApp.UWP"
     RequestedTheme="Light">
 
 </Application>

@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace NWind.Xamarin.UWP
+namespace NWind.XamarinApp.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace NWind.Xamarin.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new NWind.Xamarin.App());
+            LoadApplication(new NWind.XamarinApp.App());
         }
     }
 }

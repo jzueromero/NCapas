@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{50872401-6679-407E-9904-492E87A72734}</ProjectGuid>
+    <ProjectGuid>{1C25F4F8-1B4B-4A6C-B204-0D91847C5E02}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>NWind.Xamarin.Droid</RootNamespace>
-    <AssemblyName>NWind.Xamarin.Android</AssemblyName>
+    <RootNamespace>NWind.XamarinApp.Droid</RootNamespace>
+    <AssemblyName>NWind.XamarinApp.Android</AssemblyName>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -88,9 +88,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NWind.Xamarin\NWind.Xamarin.csproj">
-      <Project>{7DE06936-6F41-4991-AAFC-27B34F76146D}</Project>
-      <Name>NWind.Xamarin</Name>
+    <ProjectReference Include="..\NWind.XamarinApp\NWind.XamarinApp.csproj">
+      <Project>{8232048A-C6B6-4A7A-AD0E-860D98B9F3E0}</Project>
+      <Name>NWind.XamarinApp</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
