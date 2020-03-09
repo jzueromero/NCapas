@@ -25,5 +25,13 @@ namespace NWind.MVCCPLS.Controllers
             var Products = Proxy.FilterProductByCategoryID(id);
             return View("ProductList", Products);
         }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var Proxy = new Proxy();
+            var Model = Proxy.RetrieveProductById(id);
+            return View(Model);
+        }
     }
 }
