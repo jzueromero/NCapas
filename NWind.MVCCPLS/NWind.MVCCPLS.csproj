@@ -121,13 +121,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{10bc6b5a-b8b0-43c5-ac34-25c6b96cc9a4}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntitiesStandart\EntitiesStandart.csproj">
       <Project>{b82777d6-c458-4088-b896-05a68d39b767}</Project>
       <Name>EntitiesStandart</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NWindProxyService\NWindProxyService.csproj">
-      <Project>{ed2a16db-e50a-46fc-b006-08694c662f09}</Project>
-      <Name>NWindProxyService</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
