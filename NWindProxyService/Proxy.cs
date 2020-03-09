@@ -88,7 +88,7 @@ namespace NWindProxyService
 
         public async Task<Products> RetrieveProductByIDAsync(int ID)
         {
-            return await SendGet<Products>($"/api/nwind/RetrievProductByID/{ID}");
+            return await SendGet<Products>($"/api/nwind/RetrieveProductByID/{ID}");
         }
 
         public Products RetrieveProductById(int ID)
