@@ -33,5 +33,16 @@ namespace NWind.MVCCPLS.Controllers
             var Model = Proxy.RetrieveProductById(id);
             return View(Model);
         }
+
+        public ActionResult CUD(int id = 0)
+        {
+            var Proxy = new Proxy();
+            var Model = new Products();
+            if (id != 0)
+            {
+                Model = Proxy.RetrieveProductById(id);
+            }
+            return View(Model);
+        }
     }
 }
