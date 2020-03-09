@@ -1,6 +1,6 @@
 ﻿
-@{
-    @model EntitiesStandart.Products
+{
+    @Model EntitiesStandart.Products
 }
 
 <!DOCTYPE html>
@@ -12,6 +12,16 @@
 </head>
 <body>
     <div> 
+        ID: @Model.ProductID
+    </div>
+    <div>
+        Nombre: @Model.ProductName
+    </div>
+    <div>
+        Precio: @Model.UnitPrice
+    </div>
+    <div>
+        Existencia: @Model.UnitsInStock
     </div>
 </body>
 </html>
