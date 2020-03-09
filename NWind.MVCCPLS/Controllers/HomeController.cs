@@ -44,5 +44,40 @@ namespace NWind.MVCCPLS.Controllers
             }
             return View(Model);
         }
+
+        [HttpPost]
+        public ActionResult CUD(Products newProduct,
+            string CreateBtn, string UpdateBtn, string DeleteBtn)
+        {
+            Products Producto;
+            var Proxy = new Proxy();
+            ActionResult Result = View();
+
+            if (CreateBtn != null)
+            {
+                Producto = Proxy.CreateProduct(newProduct);
+                if (Producto != null)
+                {
+                    Result = RedirectToAction("CUD", new { id = Producto.ProductID });
+                }
+            }
+            else if (UpdateBtn != null) //modificacion de producto
+            {
+                var IsUpdate = Proxy.UpdateProduct(newProduct);
+                if (IsUpdate)
+                {
+                    Result = Content("El producto se ha actualizado");
+                }
+            }
+            else if (DeleteBtn != null) //eliminar producto
+            {
+                var DeletedProduct = Proxy.DeleteProduct(newProduct.ProductID);
+                if (DeletedProduct)
+                {
+                    Result = Content("El producto se ha eliminado");
+                }
+            }
+            return Result;
+        }
     }
 }
