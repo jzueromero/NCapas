@@ -21,7 +21,8 @@
         @foreach (var Product in Model)
         { 
             <tr>
-                <td>@Product.ProductID</td>
+                <td>@Html.ActionLink(Product.ProductID.ToString(),
+                    "Details", new { id = Product.ProductID })</td>
                 <td>@Product.ProductName</td>
                 <td>@Product.UnitPrice</td>
                 <td>@Product.UnitsInStock</td>
