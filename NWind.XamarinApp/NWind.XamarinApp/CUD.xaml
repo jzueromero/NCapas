@@ -4,7 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="NWind.XamarinApp.CUD">
+             x:Class="NWind.XamarinApp.CUD"
+             xmlns:vm="clr-namespace:NWind.ViewModel;assembly=NWind.ViewModel"
+             >
+    <ContentPage.BindingContext>
+        <vm:CUD/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
