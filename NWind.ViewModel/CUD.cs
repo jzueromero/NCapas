@@ -43,6 +43,24 @@ namespace NWind.ViewModel
                             var Modified = Proxy.UpdateProduct(CurrentProducto);
                         }
                 );
+            DeleteProductoCommand = new CommandDelegate
+                (
+                    (o) => { return true; },
+                    (o) =>
+                        {
+                            var Proxy = new NWindProxyService.Proxy();
+                            var IsDeleted = Proxy.DeleteProduct(ProductID);
+                            if (IsDeleted)
+                            {
+                                ProductID = 0;
+                                ProductName = "";
+                                CategoryID = 0;
+                                UnitsInStock = 0;
+                                UnitPrice = 0;
+                            }
+                        }
+
+                );
         }
     }
 }
