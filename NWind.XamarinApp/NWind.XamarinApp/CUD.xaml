@@ -29,6 +29,10 @@
                 <Label>Precio:</Label>
                 <Entry Text="{Binding UnitPrice}" WidthRequest="100"/>
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Categoria:</Label>
+                <Entry Text="{Binding CategoryID}" WidthRequest="100"/>
+            </StackLayout>
             <Button Text="Crear Producto" Command="{Binding CreateProductoCommand}" />
             <Button Text="Actualizar producto" Command="{Binding UpdateProductoCommand}"/>
             <Button Text="Eliminar Producto" Command="{Binding DeleteProductoCommand}"/>
