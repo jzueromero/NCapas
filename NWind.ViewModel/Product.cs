@@ -7,6 +7,12 @@ namespace NWind.ViewModel
 {
     public class Product : ViewModelBase
     {
+        public Product()
+        {
+            InitializeViewModel();
+        }
 
+        void InitializeViewModel()
+        { }
     }
 }
