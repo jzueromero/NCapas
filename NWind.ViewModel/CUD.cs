@@ -26,6 +26,23 @@ namespace NWind.ViewModel
 
                         }
                 );
+            UpdateProducoCommand = new CommandDelegate
+                (
+                    (o) => { return true;  },
+                    (o) =>
+                        {
+                            var CurrentProducto = new EntitiesStandart.Products
+                            {
+                                ProductID = ProductID_BF,
+                                ProductName = ProductName_BF,
+                                CategoryID = CategoryID_BF,
+                                UnitsInStock = UnitsInStock_BF,
+                                UnitPrice = UnitPrice_BF
+                            };
+                            var Proxy = new NWindProxyService.Proxy();
+                            var Modified = Proxy.UpdateProduct(CurrentProducto);
+                        }
+                );
         }
     }
 }
