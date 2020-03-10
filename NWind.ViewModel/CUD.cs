@@ -11,7 +11,7 @@ namespace NWind.ViewModel
             CreateProductoCommand = new CommandDelegate
                 (
                     (o) => { return true; },
-                    (o) => 
+                    (o) =>
                         {
                             var NewProduct = new EntitiesStandart.Products
                             {
@@ -21,14 +21,14 @@ namespace NWind.ViewModel
                                 UnitPrice = UnitPrice_BF
                             };
                             var Proxy = new NWindProxyService.Proxy();
-                            NewProduct = Proxy.CreateProduct(newProduct);
+                            NewProduct = Proxy.CreateProduct(NewProduct);
                             ProductID = NewProduct.ProductID;
 
                         }
                 );
-            UpdateProducoCommand = new CommandDelegate
+            UpdateProductoCommand = new CommandDelegate
                 (
-                    (o) => { return true;  },
+                    (o) => { return true; },
                     (o) =>
                         {
                             var CurrentProducto = new EntitiesStandart.Products
@@ -62,5 +62,78 @@ namespace NWind.ViewModel
 
                 );
         }
+
+            private int ProductID_BF;
+        public int ProductID
+        {
+            get { return ProductID_BF; }
+            set
+            {
+                if (ProductID_BF != value)
+                {
+                    ProductID_BF = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string ProductName_BF;
+        public string ProductName
+        {
+            get { return ProductName_BF; }
+            set
+            {
+                if (ProductName_BF != value)
+                {
+                    ProductName_BF = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private int CategoryID_BF;
+        public int CategoryID
+        {
+            get { return CategoryID_BF; }
+            set
+            {
+                if (CategoryID_BF != value)
+                {
+                    CategoryID_BF = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private decimal UnitsInStock_BF;
+        public decimal UnitsInStock
+        {
+            get { return UnitsInStock_BF; }
+            set
+            {
+                if (UnitsInStock_BF != value)
+                {
+                    UnitsInStock_BF = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private decimal UnitPrice_BF;
+        public decimal UnitPrice
+        {
+            get { return UnitPrice_BF; }
+            set
+            {
+                if (UnitPrice_BF != value)
+                {
+                    UnitPrice_BF = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public CommandDelegate CreateProductoCommand { get; set; }
+        public CommandDelegate UpdateProductoCommand { get; set; }
+        public CommandDelegate DeleteProductoCommand { get; set; }
+
+
+
     }
+    
 }
