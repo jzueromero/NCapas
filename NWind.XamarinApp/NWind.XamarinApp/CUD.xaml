@@ -11,10 +11,27 @@
         <vm:CUD/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10">
+            <Label>Producto Nuevo</Label>
+            <StackLayout Orientation="Horizontal">
+                <Label>ID:</Label>
+                <Entry Text="{Binding ProductID}" WidthRequest="100"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Nombre:</Label>
+                <Entry Text="{Binding ProductName}" WidthRequest="100"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Stock:</Label>
+                <Entry Text="{Binding UnitsInStock}" WidthRequest="100"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Precio:</Label>
+                <Entry Text="{Binding UnitPrice}" WidthRequest="100"/>
+            </StackLayout>
+            <Button Text="Crear Producto" Command="{Binding CreateProductoCommand}" />
+            <Button Text="Actualizar producto" Command="{Binding UpdateProductoCommand}"/>
+            <Button Text="Eliminar Producto" Command="{Binding DeleteProductoCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
