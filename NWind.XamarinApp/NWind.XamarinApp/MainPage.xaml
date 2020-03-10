@@ -8,6 +8,10 @@
              xmlns:vm="clr-namespace:NWind.ViewModel;assembly=NWind.ViewModel"
              >
 
+    <ContentPage.BindingContext>
+        <vm:Product></vm:Product>
+    </ContentPage.BindingContext>
+    
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Welcome to Xamarin.Forms!" 
