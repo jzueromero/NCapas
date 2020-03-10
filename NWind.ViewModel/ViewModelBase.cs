@@ -17,7 +17,6 @@ namespace NWind.ViewModel
             {
                 Handler(this, new PropertyChangedEventArgs(propertyName));
             }
-                
         }
     }
 }
