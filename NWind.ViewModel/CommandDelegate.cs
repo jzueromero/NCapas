@@ -7,16 +7,39 @@ namespace NWind.ViewModel
 {
     public class CommandDelegate : ICommand
     {
+        Action<object> ExecuteDelegate;
+        Func<object, bool> CanExecuteDelegate;
         public event EventHandler CanExecuteChanged;
+
+        public CommandDelegate(Func<object, bool> canExecuteDelegate, 
+                    Action<object> executeDelegate)
+        {
+            this.CanExecuteDelegate = canExecuteDelegate;
+            this.ExecuteDelegate = executeDelegate;
+
+        }
+
+        public void ChangeCanExecute()
+        {
+            var Handler = CanExecuteChanged;
+            Handler?.Invoke(this, EventArgs.Empty);
+        }
 
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            var Handler = CanExecuteDelegate;
+            bool Result = false;
+            if (Handler != null)
+            {
+                Result = Handler(parameter);
+            }
+            return Result;
         }
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            var Handler = ExecuteDelegate;
+            Handler?.Invoke(parameter);
         }
     }
 }
