@@ -46,7 +46,7 @@ namespace NWind.ViewModel
         #region properties
         private int CategoryID_BF;
 
-        public int Category
+        public int CategoryID
         {
             get { return CategoryID_BF; }
             set { CategoryID_BF = value;
